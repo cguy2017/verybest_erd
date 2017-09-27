@@ -1,4 +1,14 @@
 class BookmarkDishesController < ApplicationController
+  before_action :current_user_must_be_bookmark_dish_user, :only => [:edit, :update, :destroy]
+
+  def current_user_must_be_bookmark_dish_user
+    bookmark_dish = BookmarkDish.find(params[:id])
+
+    unless current_user == bookmark_dish.user
+      redirect_to :back, :alert => "You are not authorized for that."
+    end
+  end
+
   def index
     @bookmark_dishes = BookmarkDish.all
 
