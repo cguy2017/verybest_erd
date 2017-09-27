@@ -1,27 +1,27 @@
 <div class="page-header">
-  <h3>User #<%= @user.id %></h3>
+  <h3>User Account #<%= @user_account.id %></h3>
 </div>
 
 <div class="row">
   <div class="col-md-12 mb-2">
     <dl class="dl-horizontal">
       <dt>Email</dt>
-      <dd><%= @user.email %></dd>
+      <dd><%= @user_account.email %></dd>
 
       <dt>Password</dt>
-      <dd><%= @user.password %></dd>
+      <dd><%= @user_account.password %></dd>
 
     </dl>
 
     <div class="btn-group btn-group-justified">
-      <a href="/users" class="btn btn-primary">
+      <a href="/user_accounts" class="btn btn-primary">
         Back
       </a>
     </div>
   </div>
 </div>
 
-<!-- A User has many bookmark_dishes -->
+<!-- A User account has many bookmark_dishes -->
 
 <div class="row">
   <div class="col-md-12">
@@ -30,7 +30,7 @@
         Bookmark Dishes
       </li>
 
-      <% @user.bookmark_dishes.each do |bookmark_dish| %>
+      <% @user_account.bookmark_dishes.each do |bookmark_dish| %>
         <li class="list-group-item">
           <a href="/bookmark_dishes/<%= bookmark_dish.id %>">
             <%= bookmark_dish.venues_id %>
@@ -54,7 +54,7 @@
   </div>
 </div>
 
-<!-- A User has many bookmark_venues -->
+<!-- A User account has many bookmark_venues -->
 
 <div class="row">
   <div class="col-md-12">
@@ -63,7 +63,7 @@
         Bookmark Venues
       </li>
 
-      <% @user.bookmark_venues.each do |bookmark_venue| %>
+      <% @user_account.bookmark_venues.each do |bookmark_venue| %>
         <li class="list-group-item">
           <a href="/bookmark_venues/<%= bookmark_venue.id %>">
             <%= bookmark_venue.dishes_id %>
