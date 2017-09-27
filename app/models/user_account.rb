@@ -1,10 +1,12 @@
-class User < ApplicationRecord
+class UserAccount < ApplicationRecord
   # Direct associations
 
   has_many   :bookmark_venues,
+             :foreign_key => "user_id",
              :dependent => :destroy
 
   has_many   :bookmark_dishes,
+             :foreign_key => "user_id",
              :dependent => :destroy
 
   # Indirect associations

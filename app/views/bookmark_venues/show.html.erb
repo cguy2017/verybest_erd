@@ -17,8 +17,8 @@
       <dt>User</dt>
       <dd>
         <% if @bookmark_venue.user.present? %>
-          <a href="/users/<%= @bookmark_venue.user_id %>">
-            <%= @bookmark_venue.user.email %>
+          <a href="/user_accounts/<%= @bookmark_venue.user_id %>">
+            <%= @bookmark_venue.user.created_at %>
           </a>
         <% end %>
       </dd>

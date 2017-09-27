@@ -1,7 +1,7 @@
 class BookmarkDishesController < ApplicationController
   before_action :current_user_must_be_bookmark_dish_user, :only => [:edit, :update, :destroy]
 
-  def current_user_must_be_bookmark_dish_user
+  def current_user_must_be_bookmark_dish_user_account
     bookmark_dish = BookmarkDish.find(params[:id])
 
     unless current_user == bookmark_dish.user
