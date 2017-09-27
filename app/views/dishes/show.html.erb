@@ -192,7 +192,7 @@
           User
         </label>
 
-        <%= select_tag(:user_id, options_from_collection_for_select(User.all, :id, :email), :class => "form-control") %>
+        <%= select_tag(:user_id, options_from_collection_for_select(UserAccount.all, :id, :created_at), :class => "form-control") %>
       </div>
 
       <button class="btn btn-block btn-success">
