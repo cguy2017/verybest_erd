@@ -1,6 +1,6 @@
 class BookmarkVenuesController < ApplicationController
   def index
-    @bookmark_venues = BookmarkVenue.all
+    @bookmark_venues = BookmarkVenue.page(params[:page]).per(10)
 
     render("bookmark_venues/index.html.erb")
   end

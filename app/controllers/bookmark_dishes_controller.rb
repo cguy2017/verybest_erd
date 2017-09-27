@@ -10,7 +10,7 @@ class BookmarkDishesController < ApplicationController
   end
 
   def index
-    @bookmark_dishes = BookmarkDish.all
+    @bookmark_dishes = BookmarkDish.page(params[:page]).per(10)
 
     render("bookmark_dishes/index.html.erb")
   end
