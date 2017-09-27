@@ -24,7 +24,7 @@
           Dishes
         </label>
 
-        <input type="text" id="dishes_id" name="dishes_id" placeholder="Dishes" class="form-control" value="<%= @venue.dishes_id %>">
+        <%= select_tag(:dishes_id, options_from_collection_for_select(Dish.all, :id, :cuisines_id, @venue.dishes_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for address_id -->
