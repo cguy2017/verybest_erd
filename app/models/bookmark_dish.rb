@@ -1,0 +1,8 @@
+class BookmarkDish < ApplicationRecord
+  # Direct associations
+
+  # Indirect associations
+
+  # Validations
+
+end

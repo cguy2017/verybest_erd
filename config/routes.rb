@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Bookmark_dish resource:
+  # CREATE
+  get "/bookmark_dishes/new", :controller => "bookmark_dishes", :action => "new"
+  post "/create_bookmark_dish", :controller => "bookmark_dishes", :action => "create"
+
+  # READ
+  get "/bookmark_dishes", :controller => "bookmark_dishes", :action => "index"
+  get "/bookmark_dishes/:id", :controller => "bookmark_dishes", :action => "show"
+
+  # UPDATE
+  get "/bookmark_dishes/:id/edit", :controller => "bookmark_dishes", :action => "edit"
+  post "/update_bookmark_dish/:id", :controller => "bookmark_dishes", :action => "update"
+
+  # DELETE
+  get "/delete_bookmark_dish/:id", :controller => "bookmark_dishes", :action => "destroy"
+  #------------------------------
+
   devise_for :users
   # Routes for the User resource:
   # READ
