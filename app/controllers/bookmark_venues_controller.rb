@@ -1,6 +1,7 @@
 class BookmarkVenuesController < ApplicationController
   def index
-    @bookmark_venues = BookmarkVenue.page(params[:page]).per(10)
+    @q = BookmarkVenue.ransack(params[:q])
+    @bookmark_venues = @q.result(:distinct => true).includes(:dishes, :user).page(params[:page]).per(10)
 
     render("bookmark_venues/index.html.erb")
   end
